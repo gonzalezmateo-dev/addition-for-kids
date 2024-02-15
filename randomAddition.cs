@@ -11,7 +11,7 @@ for (int i = 0; i < 5; i++)
     Console.Write("\n ");
     for (int j = 0; j < 5; j++)
     {
-        rndNumber = rnd.Next(1,9).ToString();
+        rndNumber = rnd.Next(1,10).ToString();
         sumando += rndNumber;
         Console.Write(" " + rndNumber);
     }
