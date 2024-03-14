@@ -9,30 +9,17 @@ class Program
         Console.Write("Enter number of numbers you want to generate: ");
         int n = Convert.ToInt32(Console.ReadLine());
     
-        int[] randomNumbers = new int[n];
-        
-        // Generate and save random numbers in the array
+        int sum = 0;
+        // Generate, print and sum random numbers
         for (int i = 0; i < n; i++)
         {
-            randomNumbers[i] = rnd.Next(10000, 100000); // Generate a 5 digit random number
-        }
-        
-        // Print the random numbers stored in the array with spaces between their digits
-        
-        foreach (int number in randomNumbers)
-        {
+            int randomNumber = rnd.Next(10000, 100000);// Generate a 5 digit random number
             Console.Write("  ");
-            PrintNumberWithSpaces(number);
+            PrintNumberWithSpaces(randomNumber);
+            sum += randomNumber;
         }
         
-        // Calculate the sum of all random numbers
-        int sum = 0;
-        foreach (int number in randomNumbers)
-        {
-            sum += number;
-        }
-        
-        // Imprimir la suma con espacios entre sus dígitos
+        // Print the sum with spaces between its digits
         Console.WriteLine("\nPress enter to know the addtion result:");
         Console.ReadKey(true);
         PrintNumberWithSpaces(sum);
@@ -42,10 +29,6 @@ class Program
     static void PrintNumberWithSpaces(int number)
     {
         string numberString = number.ToString();
-        foreach (char digit in numberString)
-        {
-            Console.Write(digit + " ");
-        }
-        Console.WriteLine(); 
+        Console.WriteLine(string.Join(" ", numberString.ToCharArray()));
     }
 }
